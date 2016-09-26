@@ -1,0 +1,15 @@
+################################
+# Change the parameters below  #
+################################
+
+# path to roscon workspace on the robot
+export DLD_WS=$HOME/dld_ws
+
+###############################
+# Don't touch anything below  #
+###############################
+
+export TURTLEBOT_3D_SENSOR=r200
+export TURTLEBOT_STACKS=minimal
+
+source $DLD_WS/devel/setup.bash

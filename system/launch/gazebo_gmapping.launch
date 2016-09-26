@@ -1,0 +1,12 @@
+<launch>
+
+    <!--Gazebo -->   
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" />
+    
+    <!-- Navigation -->
+    <include file="$(find turtlebot_roscon)/launch/gmapping_gazebo.launch" />
+
+    <!-- Application -->
+    <node name="application" pkg="go_there_app" type="go_there_app.py" output="screen"/>
+
+</launch>

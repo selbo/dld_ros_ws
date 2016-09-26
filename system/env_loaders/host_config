@@ -1,0 +1,28 @@
+################################
+# Change the parameters below  #
+################################
+
+# path to roscon workspace on the host
+export ROSCON_WS=$HOME/roscon_ws
+
+# IP address of the host
+export HOST_IP=10.0.5.103
+
+# IP address of the robot
+export ROBOT_IP=10.0.5.102
+
+###############################
+# Don't touch anything below  #
+###############################
+
+export TURTLEBOT_3D_SENSOR=r200
+export TURTLEBOT_STACKS=minimal
+export ROS_MASTER_URI=http://$ROBOT_IP:11311
+export ROS_IP=$HOST_IP
+export ROS_HOSTNAME=roscon
+
+source $ROSCON_WS/devel/setup.bash
+
+alias send_key_phrase=$ROSCON_WS/src/application/manual_triggers/bash_scripts/send_key_phrase.sh
+alias send_go_there=$ROSCON_WS/src/application/manual_triggers/bash_scripts/send_go_there.sh
+alias send_intersection=$ROSCON_WS/src/application/manual_triggers/bash_scripts/send_intersection.sh

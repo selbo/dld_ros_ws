@@ -1,0 +1,14 @@
+<launch>
+
+    <!--TurtleBot Bringup-->   
+    <include file="$(find turtlebot_roscon)/launch/minimal.launch" />
+    
+    <!--RealSense Bringup-->   
+    <include file="$(find realsense_camera)/launch/r200_nodelet_navigation.launch">
+    	<arg name="enable_tf"         value="false" />
+    </include>
+
+    <!-- Navigation -->
+    <include file="$(find turtlebot_roscon)/launch/move_base.launch" />
+
+</launch>
