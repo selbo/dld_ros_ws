@@ -1,0 +1,17 @@
+<launch>
+        <arg name="3d_sensor"   default="$(env TURTLEBOT_3D_SENSOR)" />
+        <arg name="scan_topic"  default="scan" />
+        <arg name="base_frame"  default="base_footprint"/>
+        <arg name="odom_frame"  default="odom"/>
+
+        <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+                <arg name="rgb_processing"              value="false" />
+                <arg name="depth_registration"  value="false" />
+                <arg name="depth_processing"    value="false" />
+                <arg name="3d_sensor"                   value="$(arg 3d_sensor)"/>
+
+                <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
+                Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 -->
+                <arg name="scan_topic" value="/scan" />
+        </include>
+</launch>

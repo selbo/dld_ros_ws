@@ -8,10 +8,7 @@
     	<arg name="enable_tf" value="false" />
     </include>
 
-    <!-- points cloud to laser scan -->
-    <include file="$(find turtlebot_roscon)/launch/3d_sensor.launch" />
-
-    <!-- Obstacle Avoidance only -->
-    <include file="$(find turtlebot_roscon)/launch/move_base.launch" />
+    <!-- SLAM + Obstacle Avoidance -->
+    <include file="$(find turtlebot_roscon)/launch/gmapping_gazebo.launch" />
 
 </launch>
