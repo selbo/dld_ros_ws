@@ -15,12 +15,15 @@
     <include file="$(find turtlebot_roscon)/launch/move_base.launch" />
 
     <!-- Wanderer -->
-    <node name="wanderer" pkg="navigation_sensors" type="wanderer.py" />
+    <!--<node name="wanderer" pkg="navigation_sensors" type="wanderer.py" />-->
 
     <!-- vel smoother -->
     <include file="$(find turtlebot_roscon)/launch/vel_smoother.launch" />
 
     <!-- Halter -->
-    <node name="halter" pkg="robot_fsm" type="halter.py" />
+    <node name="halter" pkg="robot_fsm" type="halter.py" output="screen"/>
+    
+    <!-- relay -->
+    <node name="relay" pkg="topic_tools" type="relay" args="/cmd_vel /wanderer_cmd_vel"/>
 
 </launch>
